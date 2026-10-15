@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT:8081}
+spring:
+  application:
+    name: flashpass
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${DB_URL:jdbc:mysql://localhost:3306/flashpass?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    database: ${REDIS_DATABASE:0}
+    password: ${REDIS_PASSWORD:}
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null
+mybatis-plus:
+  type-aliases-package: io.github.spylent1.flashpass.entity
+logging:
+  level:
+    io.github.spylent1.flashpass: ${APP_LOG_LEVEL:info}
