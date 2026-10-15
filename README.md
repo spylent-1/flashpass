@@ -53,7 +53,7 @@ CREATE DATABASE flashpass CHARACTER SET utf8mb4;
 ```
 
 ```powershell
-git clone https://github.com/spylent-1/local-life-review-platfor.git flashpass
+git clone https://github.com/spylent-1/flashpass.git flashpass
 cd flashpass
 # 用 MySQL 客户端将 src/main/resources/db/flashpass.sql 导入 flashpass
 $env:DB_PASSWORD = "你的本地数据库密码"
